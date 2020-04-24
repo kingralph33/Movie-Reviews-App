@@ -10,9 +10,9 @@
 
 1. Node Server
    1. In the root directory run `yarn`
-   2. Next, run `node server.js`
+   1. Next, run `node server.js`
 
-2. Angular App
+1. Angular App
    1. In the public directory run `yarn`
-   2. Next, run `ng serve`
-   3. More instructions inside of the `./public/README.md`
+   1. Next, run `ng serve`
+   1. More instructions inside of the `./public/README.md`
