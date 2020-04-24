@@ -15,3 +15,4 @@
 2. Angular App
    1. In the public directory run `yarn`
    2. Next, run `ng serve`
+   3. More instructions inside of the `./public/README.md`
