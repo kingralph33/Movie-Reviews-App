@@ -1,0 +1,31 @@
+<div class="moviesComponents form">
+  <header>
+    <h1 class="mat-display-2">Add a review for {{ topic }}</h1>
+  </header>
+  <p>
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>Your name</mat-label>
+      <input matInput>
+      <mat-hint>Enter your name</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline" color="primary">
+      <mat-select placeholder="Stars" name="rate">
+        <mat-option *ngFor="let rating of ratings" [value]="rating.value">{{ rating.viewValue }}</mat-option>
+      </mat-select>
+      <mat-hint>Select the rating you want to give. 1 = Horribe and 5 = Great</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>Movie Title</mat-label>
+      <textarea matInput></textarea>
+      <mat-hint>Enter your review here</mat-hint>
+    </mat-form-field>
+  </p>
+  <div class="buttons">
+    <a mat-raised-button [routerLink]="['/movies']" color="primary">Submit</a>
+    <a mat-raised-button [routerLink]="['/movies']" color="warn">Cancel</a>
+  </div>
+</div>

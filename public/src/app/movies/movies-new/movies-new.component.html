@@ -1,0 +1,43 @@
+<div class="moviesComponents form">
+  <header>
+    <h1 class="mat-display-2">{{ topic }}</h1>
+  </header>
+
+  <form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup]="createForm" class="create-form">
+    <mat-form-field class="field-full-width" appearance="outline" color="primary">
+      <mat-label>Movie Title</mat-label>
+      <input matInput formControlName="title" #title />
+      <mat-hint>Enter the movie title you want to review</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field-full-width" appearance="outline" color="primary">
+      <mat-label>Your name</mat-label>
+      <input matInput formControlName="userName" #user />
+      <mat-hint>Enter your name</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field-full-width" appearance="outline" color="primary">
+      <mat-select placeholder="Stars" formControlName="rating" name="rating" #star>
+        <mat-option [value]="1">1 - HORRIBLE!</mat-option>
+        <mat-option [value]="2">2 - NOT GOOD!</mat-option>
+        <mat-option [value]="3">3 - JUST OKAY!</mat-option>
+        <mat-option [value]="4">4 - GOOD!</mat-option>
+        <mat-option [value]="5">5 - GREAT!</mat-option>
+      </mat-select>
+      <mat-hint>Select the rating you want to give. 1 = Horribe and 5 = Great</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="field-full-width" appearance="outline" color="primary">
+      <mat-label>Your Review</mat-label>
+      <textarea matInput formControlName="review" #review></textarea>
+      <mat-hint>Enter your review here</mat-hint>
+    </mat-form-field>
+
+    <div class="buttons">
+      <button type="submit" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">
+        Submit
+      </button>
+      <a mat-raised-button [routerLink]="['/movies']" color="warn">Cancel</a>
+    </div>
+  </form>
+</div>

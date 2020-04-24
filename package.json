@@ -1,0 +1,22 @@
+{
+  "name": "movie_reviews",
+  "version": "1.0.0",
+  "description": "Movie Review app",
+  "main": "server.js",
+  "repository": "git@github.com:ROKingcoder33/Movie-Reviews-App.git",
+  "author": "Ralph King Jr <ralph@kingralph.dev>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@status/codes": "^1.1.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.12",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
