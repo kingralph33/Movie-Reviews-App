@@ -1,12 +1,30 @@
 # Movie Review App
 
-## Prereqs
+## Development Options
+
+### Option 1: Dev Container (Recommended)
+
+Use VS Code Dev Containers for a consistent, pre-configured development environment with all dependencies included:
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
+2. Install [VS Code](https://code.visualstudio.com/) with the "Dev Containers" extension
+3. Open this project in VS Code
+4. Click "Reopen in Container" when prompted
+5. Once the container starts, open two terminals:
+   - Terminal 1: `node server.js` (backend)
+   - Terminal 2: `cd public && ng serve` (frontend)
+
+See `.devcontainer/README.md` for more details.
+
+### Option 2: Local Installation
+
+**Prereqs:**
 * Node 24 or higher
 * npm or yarn
-* Angular 19
-* MongoDB
+* Angular CLI 19 (`npm install -g @angular/cli`)
+* MongoDB 7 or higher
 
-## Running the apps
+**Running the apps:**
 
 1. Node Server
    1. In the root directory run `yarn` or `npm install`
@@ -16,6 +34,12 @@
    1. In the public directory run `yarn` or `npm install`
    1. Next, run `ng serve` (or `npm start`)
    1. More instructions inside of the `./public/README.md`
+
+## Accessing the Application
+
+- Frontend: http://localhost:4200
+- Backend API: http://localhost:8000
+- MongoDB: localhost:27017
 
 ## Recent Updates (2026)
 
