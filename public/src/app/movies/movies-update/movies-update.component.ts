@@ -8,7 +8,8 @@ export interface Rate {
 @Component({
   selector: 'app-movies-update',
   templateUrl: './movies-update.component.html',
-  styleUrls: ['./movies-update.component.scss']
+  styleUrls: ['./movies-update.component.scss'],
+  standalone: false
 })
 export class MoviesUpdateComponent implements OnInit {
   topic = 'TBD';

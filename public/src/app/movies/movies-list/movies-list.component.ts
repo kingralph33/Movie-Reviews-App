@@ -12,7 +12,8 @@ export interface MovieElement {
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
-  styleUrls: ['./movies-list.component.scss']
+  styleUrls: ['./movies-list.component.scss'],
+  standalone: false
 })
 export class MoviesListComponent implements OnInit {
   dataSource = new MovieDataSource(this.httpService);

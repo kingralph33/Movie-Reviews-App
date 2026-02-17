@@ -9,7 +9,8 @@ import { HttpService } from '../../services/http.service';
 @Component({
   selector: 'app-movies-detail',
   templateUrl: './movies-detail.component.html',
-  styleUrls: ['./movies-detail.component.scss']
+  styleUrls: ['./movies-detail.component.scss'],
+  standalone: false
 })
 export class MoviesDetailComponent implements OnInit {
   @Input()
