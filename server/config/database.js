@@ -3,13 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 const modelsPath = path.join(__dirname, '../models');
-mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect('mongodb://localhost/movies', {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
+mongoose.connect('mongodb://localhost/movies');
 
 
 mongoose.connection.on('connected', () =>

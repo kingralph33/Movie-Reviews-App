@@ -71,7 +71,7 @@ module.exports = {
     const { movie_id: movieId } = req.params;
     console.log('You deleted: ', req.body)
     try {
-      const movie = await Movie.findByIdAndRemove(movieId);
+      const movie = await Movie.findByIdAndDelete(movieId);
       res.json(movie);
     } catch (error) {
       res.status(Http.NotFound).json(error);

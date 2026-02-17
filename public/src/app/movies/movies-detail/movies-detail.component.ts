@@ -13,16 +13,20 @@ import { HttpService } from '../../services/http.service';
 })
 export class MoviesDetailComponent implements OnInit {
   @Input()
-  movie: Movie;
+  movie: Movie = new Movie();
+  title: string = '';
 
   constructor(private httpService: HttpService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap
-      .pipe(map(params => params.get('id')),
+      .pipe(map(params => params.get('id') as string),
         switchMap((id: string) => this.httpService.getOneMovie(id))
       )
-      .subscribe(movie => (this.movie = movie));
+      .subscribe(movie => {
+        this.movie = movie;
+        this.title = movie.title;
+      });
     console.log('This is MOVIE: ', this.movie);
   }
 }

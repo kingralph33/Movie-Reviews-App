@@ -15,12 +15,11 @@ export interface MovieElement {
   styleUrls: ['./movies-list.component.scss']
 })
 export class MoviesListComponent implements OnInit {
-  // tslint:disable-next-line: no-use-before-declare
   dataSource = new MovieDataSource(this.httpService);
   displayedColumns: string[] = ['title', 'action'];
   topic = 'Movie List';
-  movies: Movie[];
-  chosenMovie: Movie;
+  movies: Movie[] = [];
+  chosenMovie: Movie = new Movie();
 
   constructor(private httpService: HttpService) { }
 
