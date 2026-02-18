@@ -31,24 +31,26 @@ export class MoviesNewComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit() {
-    this.httpService.createAMovie(this.movie)
-      .subscribe(
-        (response) => console.log('SUBMITTED RESPONSE: ', response),
-        (error) => console.log(error)
-      );
-    // event.preventDefault();
-    // console.log('This is the data: ', this.createForm);
-    // this.createForm;
-    // this.httpService
-    //   .createAMovie()
-    //   .subscribe(movie => {
-    //     console.log(movie);
-    //     this.router.navigate(['/movies']);
-    //   });
+    // Map form values to the structure expected by the backend
+    const formValues = this.createForm.value;
+    const movieData: Movie = {
+      _id: '',
+      title: formValues.title,
+      reviews: [{
+        userName: formValues.userName,
+        rating: formValues.rating,
+        review: formValues.review
+      }]
+    };
 
-    // this.movie = new Movie();
-
-    // this.createForm.reset();
+    this.httpService.createAMovie(movieData)
+      .subscribe({
+        next: (response) => {
+          console.log('SUBMITTED RESPONSE: ', response);
+          this.router.navigate(['/movies']);
+        },
+        error: (error) => console.log(error)
+      });
   }
 
 }
