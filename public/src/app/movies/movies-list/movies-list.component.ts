@@ -12,19 +12,20 @@ export interface MovieElement {
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
-  styleUrls: ['./movies-list.component.scss']
+  styleUrls: ['./movies-list.component.scss'],
+  standalone: false
 })
 export class MoviesListComponent implements OnInit {
-  // tslint:disable-next-line: no-use-before-declare
-  dataSource = new MovieDataSource(this.httpService);
+  dataSource!: MovieDataSource;
   displayedColumns: string[] = ['title', 'action'];
   topic = 'Movie List';
-  movies: Movie[];
-  chosenMovie: Movie;
+  movies: Movie[] = [];
+  chosenMovie: Movie = new Movie();
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+    this.dataSource = new MovieDataSource(this.httpService);
     this.httpService.getAllMovies().subscribe(movies => {
       console.log('These are the movies: ', movies);
       this.movies = movies;

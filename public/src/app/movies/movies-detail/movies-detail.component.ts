@@ -9,20 +9,23 @@ import { HttpService } from '../../services/http.service';
 @Component({
   selector: 'app-movies-detail',
   templateUrl: './movies-detail.component.html',
-  styleUrls: ['./movies-detail.component.scss']
+  styleUrls: ['./movies-detail.component.scss'],
+  standalone: false
 })
 export class MoviesDetailComponent implements OnInit {
   @Input()
-  movie: Movie;
+  movie: Movie = new Movie();
 
   constructor(private httpService: HttpService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap
-      .pipe(map(params => params.get('id')),
+      .pipe(map(params => params.get('id') as string),
         switchMap((id: string) => this.httpService.getOneMovie(id))
       )
-      .subscribe(movie => (this.movie = movie));
-    console.log('This is MOVIE: ', this.movie);
+      .subscribe(movie => {
+        this.movie = movie;
+        console.log('This is MOVIE: ', this.movie);
+      });
   }
 }

@@ -8,7 +8,8 @@ import { Movie } from '../../models/movie.model';
 @Component({
   selector: 'app-movies-new',
   templateUrl: './movies-new.component.html',
-  styleUrls: ['./movies-new.component.scss']
+  styleUrls: ['./movies-new.component.scss'],
+  standalone: false
 })
 export class MoviesNewComponent implements OnInit {
   topic = 'Submit a movie and your review';
