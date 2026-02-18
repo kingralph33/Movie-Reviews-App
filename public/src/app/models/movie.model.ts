@@ -5,9 +5,5 @@ export class Movie {
     userName: string;
     rating: number;
     review: string;
-  } = {
-    userName: '',
-    rating: 0,
-    review: ''
-  };
+  }[] = [];
 }

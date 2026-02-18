@@ -16,7 +16,7 @@ export interface MovieElement {
   standalone: false
 })
 export class MoviesListComponent implements OnInit {
-  dataSource = new MovieDataSource(this.httpService);
+  dataSource!: MovieDataSource;
   displayedColumns: string[] = ['title', 'action'];
   topic = 'Movie List';
   movies: Movie[] = [];
@@ -25,6 +25,7 @@ export class MoviesListComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+    this.dataSource = new MovieDataSource(this.httpService);
     this.httpService.getAllMovies().subscribe(movies => {
       console.log('These are the movies: ', movies);
       this.movies = movies;

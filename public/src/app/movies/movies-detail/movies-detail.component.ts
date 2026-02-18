@@ -15,7 +15,6 @@ import { HttpService } from '../../services/http.service';
 export class MoviesDetailComponent implements OnInit {
   @Input()
   movie: Movie = new Movie();
-  title: string = '';
 
   constructor(private httpService: HttpService, private route: ActivatedRoute) { }
 
@@ -26,8 +25,7 @@ export class MoviesDetailComponent implements OnInit {
       )
       .subscribe(movie => {
         this.movie = movie;
-        this.title = movie.title;
+        console.log('This is MOVIE: ', this.movie);
       });
-    console.log('This is MOVIE: ', this.movie);
   }
 }
