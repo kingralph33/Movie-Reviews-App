@@ -2,7 +2,7 @@
   "name": "Movie Reviews App",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces",
 
   "customizations": {
     "vscode": {
