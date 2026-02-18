@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffed4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fff5ba;stop-opacity:0.6" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Star -->
+  <path d="M 100 20 L 110 65 L 155 65 L 118 95 L 130 140 L 100 110 L 70 140 L 82 95 L 45 65 L 90 65 Z"
+        fill="url(#starGradient)"
+        filter="url(#glow)"
+        stroke="#ffd700"
+        stroke-width="1"/>
+
+  <!-- Tail/Trail -->
+  <path d="M 100 110 Q 140 150 180 180"
+        fill="none"
+        stroke="url(#starGradient)"
+        stroke-width="3"
+        stroke-linecap="round"
+        opacity="0.8"/>
+  <path d="M 95 115 Q 130 155 165 185"
+        fill="none"
+        stroke="url(#starGradient)"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.5"/>
+  <path d="M 105 115 Q 145 145 190 175"
+        fill="none"
+        stroke="url(#starGradient)"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.5"/>
+
+  <!-- Sparkles -->
+  <circle cx="85" cy="100" r="2" fill="#ffed4e" opacity="0.9"/>
+  <circle cx="115" cy="95" r="2" fill="#ffed4e" opacity="0.9"/>
+  <circle cx="130" cy="125" r="1.5" fill="#fff5ba" opacity="0.7"/>
+  <circle cx="155" cy="155" r="1.5" fill="#fff5ba" opacity="0.6"/>
+</svg>
